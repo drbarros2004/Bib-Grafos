@@ -3,7 +3,7 @@ Esse é o repositório para os trabalhos da disciplina Teoria dos Grafos (2024.2
 
 # Como utilizar a biblioteca?
 
-Para utilizar a biblioteca, é necessário ter os arquivos "graph_lib.cpp" e "graph_lib.h" no mesmo repositório do arquivo que usará a biblioteca. Então, basta colocar "#include "graph.h"" no começo do arquivo para que o compilador reconheça de onde estão vindo as funções que serão utilizadas.
+Para utilizar a biblioteca, é necessário ter os arquivos `graph_lib.cpp` e "graph_lib.h" no mesmo repositório do arquivo que usará a biblioteca. Então, basta colocar "#include "graph.h"" no começo do arquivo para que o compilador reconheça de onde estão vindo as funções que serão utilizadas.
 
 
 
