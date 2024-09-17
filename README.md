@@ -15,20 +15,43 @@ no começo do arquivo para que o compilador reconheça de onde estão vindo as f
 
 # Funções para receber entradas
 
-Foram criadas 3 funções diferentes que recebem a string correspondente ao nome do arquivo de texto (ex.: `"grafo_teste.txt"`) e retornam o grafo em uma das 3 representações pedidas (vetor de adjacência, lista de adjacência e matriz de adjacência).
+Foram criadas 2 funções diferentes que recebem a string correspondente ao nome do arquivo de texto (ex.: `"grafo_teste.txt"`) e retornam o grafo em uma das duas representações pedidas (vetor de adjacência e matriz de adjacência).
 
-1. `txt_to_adjacency_list`
-2. `txt_to_adjacency_vector`
-3. `txt_to_adjacency_matrix`
+Quando qualquer uma das funções é chamada, é retornado um arquivo contendo algumas informações básicas sobre o grafo: número de vértices e arestas, grau máximo, grau mínimo, grau médio, mediana de grau e informações sobre componentes conexas.
 
-# Funções para obter informações sobre o grafo
+1. `txt_to_adjacency_vector`
+2. `txt_to_adjacency_matrix`
 
-Cada uma dessas funções é implementada 3 vezes no arquivo que contém as funções (uma para cada representação possível para o grafo). Nós utilizamos da sobrecarga de funções em C++ (funções podem ter o mesmo nome, desde que tenham diferenças nasquantidades ou tipos dos parâmetros) para que as funções de mesmo objetivo tivessem o mesmo nome, independente da representação.
+Ex.:
 
-1. `minDegree`
-2. `maxDegree`
-3. `averageDegree`
-4. `medianDegree`
-5. 
+```
+vector<vector<int>> grafo_teste = txt_to_adjacency_vector(nome_arquivo);
+```
+
+# Funções que geram árvores (BFS e DFS):
+
+As funções a seguir percorrem o grafo através de uma Busca em Largura ou Busca em Profundidade e retornam um arquivo ".txt" contendo informações de nível e pai.
+
+Por padrão (caso o usuário omita esse parâmetro), o nome do arquivo é "arvoreDFS.txt" ou "arvoreBFS.txt", mas o usuário pode passar o a string correspondente ao nome do arquivo de saída como parâmetro para essas funções.
+
+1. `BFS_tree`
+2. `DFS_tree`
+
+Ex.:
+
+```
+DFS_tree(grafo_teste, 1, "arvoreDFS_grafo_teste.txt");
+```
+
+# Distância e Diâmetro:
+
+Usando a Busca em Largura (BFS) como base, criamos a função Distancia, que calcula o comprimento do menor caminho entre dois vértices, e a função Diametro, que calcula a maior das menores distâncias entre dois vértices quaisquer de um grafo.
+
+ex.:
+
+```
+Diametro(grafo_teste);
+Distancia(grafo_teste, 1, 3);
+```
 
 
