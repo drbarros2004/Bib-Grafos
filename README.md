@@ -6,7 +6,7 @@ Esse é o repositório para os trabalhos da disciplina Teoria dos Grafos (2024.2
 Para utilizar a biblioteca, é necessário ter os arquivos `graph_lib.cpp` e `graph_lib.h` no mesmo repositório do arquivo que usará a biblioteca. Então, basta colocar 
 
 ```
-#include "graph.h"
+#include "graph_lib.h"
 ```
 
 no começo do arquivo para que o compilador reconheça de onde estão vindo as funções que serão utilizadas.
@@ -14,12 +14,12 @@ no começo do arquivo para que o compilador reconheça de onde estão vindo as f
 Para compilar, precisamos também explicitar o nome do arquivo ".cpp" que contém as funções da biblioteca.
 
 ```
-g++ arquivo.cpp graph.cpp -o
+g++ arquivo.cpp graph_lib.cpp -o
 ```
 
 # Funções para receber entradas
 
-Foram criadas 2 funções diferentes que recebem a string correspondente ao nome do arquivo de texto (ex.: `"grafo_teste.txt"`) e retornam o grafo em uma das duas representações pedidas (vetor de adjacência e matriz de adjacência).
+Foram criadas 2 funções diferentes que recebem a string correspondente ao nome do arquivo de texto de entrada (ex.: `"grafo_teste.txt"`) e retornam o grafo em uma das duas representações pedidas (vetor de adjacência ou matriz de adjacência).
 
 Quando qualquer uma das funções é chamada, é retornado um arquivo contendo algumas informações básicas sobre o grafo: número de vértices e arestas, grau máximo, grau mínimo, grau médio, mediana de grau e informações sobre componentes conexas.
 
