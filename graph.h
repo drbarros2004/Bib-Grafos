@@ -18,6 +18,8 @@ int maxDegree(const vector<vector<int>>& grafo);
 double averageDegree(const vector<vector<int>>& grafo);
 double medianDegree(const vector<vector<int>>& grafo);
 
+void ComponentesConexas_vector(const vector<vector<int>>& graph);
+
 // Funções para percorrer o grafo (vetor de adjacência):
 
 void BFS_tree_vector(const vector<vector<int>>& grafo, int origem, ofstream& arquivo_de_saida);
