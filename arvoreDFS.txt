@@ -1,0 +1,40 @@
+Vértice: 1
+Nível: 0
+Pai: -1
+
+Vértice: 2
+Nível: 1
+Pai: 1
+
+Vértice: 3
+Nível: 4
+Pai: 10
+
+Vértice: 4
+Nível: 1
+Pai: 1
+
+Vértice: 5
+Nível: 1
+Pai: 1
+
+Vértice: 6
+Nível: 1
+Pai: 1
+
+Vértice: 7
+Nível: 1
+Pai: 1
+
+Vértice: 8
+Nível: 1
+Pai: 1
+
+Vértice: 9
+Nível: 2
+Pai: 8
+
+Vértice: 10
+Nível: 3
+Pai: 9
+
