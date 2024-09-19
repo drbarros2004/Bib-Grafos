@@ -34,28 +34,38 @@ vector<vector<int>> grafo_teste = txt_to_adjacency_vector(nome_arquivo);
 
 # Funções que geram árvores (BFS e DFS):
 
-As funções a seguir percorrem o grafo através de uma Busca em Largura ou Busca em Profundidade e retornam um arquivo ".txt" contendo informações de nível e pai.
+As funções a seguir percorrem o grafo através de uma Busca em Largura ou Busca em Profundidade a partir de um vértice escolhido pelo usuário e retornam um arquivo ".txt" contendo informações de nível e pai, representando a árvore relacionada à busca.
 
-Por padrão (caso o usuário omita esse parâmetro), o nome do arquivo é "arvoreDFS.txt" ou "arvoreBFS.txt", mas o usuário pode passar o a string correspondente ao nome do arquivo de saída como parâmetro para essas funções.
+Por padrão (caso o usuário omita esse parâmetro), o nome do arquivo é "arvoreDFS.txt" ou "arvoreBFS.txt", mas o usuário pode passar a string correspondente ao nome do arquivo de saída como parâmetro para essas funções.
 
-1. `BFS_tree`
-2. `DFS_tree`
+1. `BFS_tree_vector`
+2. `DFS_tree_vector`
+3. `BFS_tree_matrix`
+4. `DFS_tree_matrix`
 
 Ex.:
 
 ```
-DFS_tree(grafo_teste, 1, "arvoreDFS_grafo_teste.txt");
+DFS_tree_vector(grafo_teste, 1, "arvoreDFS_grafo_teste.txt");
+```
+
+Ou, usando uma BFS para matriz de adjacência:
+
+```
+BFS_tree_vector(grafo_teste, 3, "arvoreBFS_grafo_teste.txt");
 ```
 
 # Distância e Diâmetro:
 
 Usando a Busca em Largura (BFS) como base, criamos a função Distancia, que calcula o comprimento do menor caminho entre dois vértices, e a função Diametro, que calcula a maior das menores distâncias entre dois vértices quaisquer de um grafo.
 
+Novamente, implementamos essas duas funções para cada uma das representações possíveis.
+
 ex.:
 
 ```
-Diametro(grafo_teste);
-Distancia(grafo_teste, 1, 3);
+Diametro_vector(grafo_teste);
+Distancia_matrix(grafo_teste, 1, 3);
 ```
 
 
