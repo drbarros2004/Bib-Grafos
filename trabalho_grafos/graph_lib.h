@@ -28,6 +28,14 @@ void DFS_tree_vector(const vector<vector<int>>& graph, int origem, string nome_d
 void Distancia_vector(const vector<vector<int>>& graph, int origem, int destino);
 void Diametro_vector(const vector<vector<int>>& graph);
 
+// Contabilizando o tempo:
+
+double DFS_tree_vector_with_execution_time(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreDFS.txt");
+double BFS_tree_vector_with_execution_time(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreBFS.txt");
+
+double DFS_tree_matrix_with_execution_time(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreDFS.txt");
+double BFS_tree_matrix_with_execution_time(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreBFS.txt");
+
 
 // Funções para percorrer o grafo (matriz de adjacência):
 
