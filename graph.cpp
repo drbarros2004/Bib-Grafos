@@ -4,21 +4,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// gerar_saida     (falta transformar em função e colocar informações de componentes conexos)
-     // falta mediana de grau
-
-// gerar_arvore_bfs   (é atualmente a bfs detalhada)
-// gerar_arvore_dfs
-
-// podemos codar bfs e dfs sem saída, porque provavelmente vai ser usado
-// distancia (u, v)
-// diametro (g)
-
-// int quant_arestas(vector<vector<int>>& grafo){
-//     int quant_arestas = 0;
-    
-// }
-
 // Funções para receber o grafo:
 
 // vector<vector<int>> txt_to_adjacency_vector(const string& nome_arquivo, string nome_do_arquivo_de_saida = "resultados.txt") {
@@ -138,8 +123,8 @@ vector<vector<int>> txt_to_adjacency_vector(const string& nome_arquivo, string n
     for (int node = 1; node < graph.size(); node++) {
         if (!visitados[node]) {
             quant_componentes++;
-            componentes.push_back(vector<int>()); // Inicializa uma nova componente
-            tamanhos.push_back(0); // Inicializa o tamanho da componente
+            componentes.push_back(vector<int>()); 
+            tamanhos.push_back(0); 
             fila.push(node);
             visitados[node] = true;
             componentes[iterador].push_back(node);
@@ -200,7 +185,7 @@ vector<vector<int>> txt_to_adjacency_vector(const string& nome_arquivo, string n
 }
 
 
-void BFS_tree_vector(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida){
+void BFS_tree_vector(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreBFS.txt"){
     int INF = 1e9;
     vector<int> nivel(graph.size(), INF);
     vector<int> pai(graph.size(), INF);
@@ -263,9 +248,13 @@ void DFS_tree_vector(const vector<vector<int>>& graph, int origem, string nome_d
     ofstream arquivo_de_saida(nome_do_arquivo_de_saida);
     
     for(int i = 1; i < graph.size(); i++){
-        arquivo_de_saida  << "Vértice: " << i << endl;
-        arquivo_de_saida << "Nível: " << nivel[i] << endl;
-        arquivo_de_saida << "Pai: " << pai[i] << '\n' << '\n';
+        if (nivel[i] != 1e9) {
+
+            arquivo_de_saida  << "Vértice: " << i << endl;
+            arquivo_de_saida << "Nível: " << nivel[i] << endl;
+            arquivo_de_saida << "Pai: " << pai[i] << '\n' << '\n';
+
+        }
     }
 
     cout << "Resultados gravados no arquivo " << nome_do_arquivo_de_saida << endl;
@@ -338,8 +327,8 @@ void ComponentesConexas_vector(const vector<vector<int>>& graph) {
     for (int node = 1; node < graph.size(); node++) {
         if (!visitados[node]) {
             quant_componentes++;
-            componentes.push_back(vector<int>()); // Inicializa uma nova componente
-            tamanhos.push_back(0); // Inicializa o tamanho da componente
+            componentes.push_back(vector<int>()); 
+            tamanhos.push_back(0); 
             fila.push(node);
             visitados[node] = true;
             componentes[iterador].push_back(node);
@@ -451,6 +440,87 @@ vector<vector<int>> txt_to_adjacency_matrix(const string& nome_arquivo, string n
 
     return matrix;
 }
+
+void DFS_tree_matrix(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreDFS.txt"){
+    int INF = 1e9;
+    vector<int> nivel(graph.size(), INF);
+    vector<int> pai(graph.size(), INF);
+    vector<bool> visitados(graph.size(), false);
+    stack <int> pilha;
+    visitados[origem] = true;
+    nivel[origem] = 0;
+    pai[origem] = -1;
+    pilha.push(origem);
+    while(!pilha.empty()){
+        int atual = pilha.top();
+        pilha.pop();
+        for(int vizinho = 0; vizinho < graph.size(); vizinho ++){
+            if(graph[atual][vizinho] == 1 & !visitados[vizinho]){
+                pilha.push(vizinho);
+                visitados[vizinho] = true;
+                nivel[vizinho] = nivel[atual] + 1;
+                pai[vizinho] = atual;
+            }
+        }      
+    }
+
+    ofstream arquivo_de_saida(nome_do_arquivo_de_saida);
+    
+    for(int i = 1; i < graph.size(); i++){
+        if (nivel[i] != 1e9) {
+
+            arquivo_de_saida  << "Vértice: " << i << endl;
+            arquivo_de_saida << "Nível: " << nivel[i] << endl;
+            arquivo_de_saida << "Pai: " << pai[i] << '\n' << '\n';
+
+        }
+    }
+
+    cout << "Resultados gravados no arquivo " << nome_do_arquivo_de_saida << endl;
+    arquivo_de_saida.close();
+
+}
+
+void BFS_tree_matrix(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreBFS.txt"){
+    int INF = 1e9;
+    vector<int> nivel(graph.size(), INF);
+    vector<int> pai(graph.size(), INF);
+    vector<bool> visitados(graph.size(), false);
+    queue <int> fila;
+    visitados[origem] = true;
+    nivel[origem] = 0;
+    pai[origem] = -1;
+    fila.push(origem);
+    while(!fila.empty()){
+        int atual = fila.front();
+        fila.pop();
+        for(int vizinho = 0; vizinho < graph.size(); vizinho ++){
+            if(graph[atual][vizinho] == 1 & !visitados[vizinho]){
+                fila.push(vizinho);
+                visitados[vizinho] = true;
+                nivel[vizinho] = nivel[atual] + 1;
+                pai[vizinho] = atual;
+            }
+        }      
+    }
+
+    ofstream arquivo_de_saida(nome_do_arquivo_de_saida);
+    
+    for(int i = 1; i < graph.size(); i++){
+        if (nivel[i] != 1e9) {
+
+            arquivo_de_saida  << "Vértice: " << i << endl;
+            arquivo_de_saida << "Nível: " << nivel[i] << endl;
+            arquivo_de_saida << "Pai: " << pai[i] << '\n' << '\n';
+
+        }
+    }
+
+    cout << "Resultados gravados no arquivo " << nome_do_arquivo_de_saida << endl;
+    arquivo_de_saida.close();
+
+}
+
 
 
 
