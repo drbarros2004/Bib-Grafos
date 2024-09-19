@@ -22,12 +22,16 @@ void ComponentesConexas_vector(const vector<vector<int>>& graph);
 
 // Funções para percorrer o grafo (vetor de adjacência):
 
-void BFS_tree_vector(const vector<vector<int>>& grafo, int origem, ofstream& arquivo_de_saida);
-void DFS(const vector<vector<int>>& grafo, int origem, vector<bool>& visitados);
-
+void BFS_tree_vector(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreBFS.txt");
 void DFS_tree_vector(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreDFS.txt");
 
 void Distancia_vector(const vector<vector<int>>& graph, int origem, int destino);
 void Diametro_vector(const vector<vector<int>>& graph);
+
+
+// Funções para percorrer o grafo (matriz de adjacência):
+
+void DFS_tree_matrix(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreDFS.txt");
+void BFS_tree_matrix(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreBFS.txt");
 
 #endif
