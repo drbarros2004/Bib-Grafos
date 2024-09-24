@@ -64,8 +64,8 @@ Novamente, implementamos essas duas funções para cada uma das representações
 ex.:
 
 ```
-Diametro_vector(grafo_teste);
-Distancia_matrix(grafo_teste, 1, 3);
+Diameter_vector(grafo_teste);
+Distance_matrix(grafo_teste, 1, 3);
 ```
 
 # Funções para cálculo de tempo de execução:
