@@ -53,10 +53,10 @@ int main() {
 
     // Distâncias e diâmetros:
 
-    Distancia_vector(grafo2_vector, 10, 20);
-    Distancia_vector(grafo2_vector, 10, 30);
-    Distancia_vector(grafo2_vector, 20, 30);
-    Diametro_vector(grafo2_vector);
+    Distance_vector(grafo2_vector, 10, 20);
+    Distance_vector(grafo2_vector, 10, 30);
+    Distance_vector(grafo2_vector, 20, 30);
+    Diameter_vector(grafo2_vector);
 
     // Desalocar o grafo2_vector
     grafo2_vector = vector<vector<int>>();
