@@ -297,7 +297,7 @@ double DFS_tree_vector_with_execution_time(const vector<vector<int>>& graph, int
 
 }
 
-int Diametro_aproximado_vector(const vector<vector<int>>& graph){
+int Approximate_diameter_vector(const vector<vector<int>>& graph){
     int max_distancia = 0;
     for(int i = 0; i < 9; i ++){
         vector<int> dist(graph.size(), -1);
@@ -323,10 +323,10 @@ int Diametro_aproximado_vector(const vector<vector<int>>& graph){
 }
 
 
-int Diametro_vector(const vector<vector<int>>& graph){
+int Diameter_vector(const vector<vector<int>>& graph){
 
     if(graph.size() >= 50000){
-        return Diametro_aproximado_vector(graph);
+        return Approximate_diameter_vector(graph);
     }
     else{
         int max_distancia = 0;
@@ -356,7 +356,7 @@ int Diametro_vector(const vector<vector<int>>& graph){
 
 
 
-void Distancia_vector(const vector<vector<int>>& graph, int origem, int destino){
+void Distance_vector(const vector<vector<int>>& graph, int origem, int destino){
     vector<int> dist(graph.size(), -1);
     vector<bool> visitados(graph.size(), false);
     queue <int> fila;
@@ -681,7 +681,7 @@ double DFS_tree_matrix_with_execution_time(const vector<vector<bool>>& matrix, i
 
 }
 
-int Diametro_aproximado_matrix(const vector<vector<bool>>& matrix){
+int Approximate_diameter_matrix(const vector<vector<bool>>& matrix){
     int max_distancia = 0;
     for(int i = 0; i < 9; i ++){
         vector<int> dist(matrix.size(), -1);
@@ -707,10 +707,10 @@ int Diametro_aproximado_matrix(const vector<vector<bool>>& matrix){
 }
  
 
-int Diametro_matrix(const vector<vector<bool>>& matrix){
+int Diameter_matrix(const vector<vector<bool>>& matrix){
 
     if(matrix.size() >= 50000){
-        return Diametro_aproximado_matrix(matrix);
+        return Approximate_diameter_matrix(matrix);
     }
     else{
         int max_distancia = 0;
@@ -739,7 +739,7 @@ int Diametro_matrix(const vector<vector<bool>>& matrix){
 }
 
 
-void Distancia_matrix(const vector<vector<bool>>& matrix, int origem, int destino){
+void Distance_matrix(const vector<vector<bool>>& matrix, int origem, int destino){
     vector<int> dist(matrix.size(), -1);
     vector<bool> visitados(matrix.size(), false);
     queue <int> fila;
