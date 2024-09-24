@@ -61,7 +61,7 @@ Usando a Busca em Largura (BFS) como base, criamos a função Distancia, que cal
 
 Novamente, implementamos essas duas funções para cada uma das representações possíveis.
 
-ex.:
+Ex.:
 
 ```
 Diameter_vector(grafo_teste);
