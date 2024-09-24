@@ -3,13 +3,12 @@
 
 #include <vector>
 #include <fstream>
-#include <list>
 using namespace std;
 
 // Funções de receber entrada
 
-vector<vector<int>> txt_to_adjacency_matrix(const string& nome_arquivo, string nome_do_arquivo_de_saida = "resultados.txt");
-vector<vector<int>> txt_to_adjacency_vector(const string& nome_arquivo, string nome_do_arquivo_de_saida = "resultados.txt");
+vector<vector<bool>> txt_to_adjacency_matrix(const string& nome_arquivo, string nome_do_arquivo_de_saida_principal = "resultados.txt");
+vector<vector<int>> txt_to_adjacency_vector(const string& nome_arquivo, string nome_do_arquivo_de_saida_principal = "resultados.txt");
 
 // Funções para obter informações básicas do grafo (vetor de adjacência):
 
@@ -18,28 +17,32 @@ int maxDegree(const vector<vector<int>>& grafo);
 double averageDegree(const vector<vector<int>>& grafo);
 double medianDegree(const vector<vector<int>>& grafo);
 
-void ComponentesConexas_vector(const vector<vector<int>>& graph);
-
 // Funções para percorrer o grafo (vetor de adjacência):
 
 void BFS_tree_vector(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreBFS.txt");
 void DFS_tree_vector(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreDFS.txt");
 
 void Distancia_vector(const vector<vector<int>>& graph, int origem, int destino);
+void Diametro_aproximado_vector(const vector<vector<int>>& graph);
 void Diametro_vector(const vector<vector<int>>& graph);
+
+
+// Funções para percorrer o grafo (matriz de adjacência):
+
+void DFS_tree_matrix(const vector<vector<bool>>& matrix, int origem, string nome_do_arquivo_de_saida = "arvoreDFS.txt");
+void BFS_tree_matrix(const vector<vector<bool>>& matrix, int origem, string nome_do_arquivo_de_saida = "arvoreBFS.txt");
+
+void Distancia_matrix(const vector<vector<bool>>& matrix, int origem, int destino);
+void Diametro_aproximado_matrix(const vector<vector<bool>>& matrix);
+void Diametro_matrix(const vector<vector<bool>>& matrix);
+
 
 // Contabilizando o tempo:
 
 double DFS_tree_vector_with_execution_time(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreDFS.txt");
 double BFS_tree_vector_with_execution_time(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreBFS.txt");
 
-double DFS_tree_matrix_with_execution_time(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreDFS.txt");
-double BFS_tree_matrix_with_execution_time(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreBFS.txt");
-
-
-// Funções para percorrer o grafo (matriz de adjacência):
-
-void DFS_tree_matrix(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreDFS.txt");
-void BFS_tree_matrix(const vector<vector<int>>& graph, int origem, string nome_do_arquivo_de_saida = "arvoreBFS.txt");
+double DFS_tree_matrix_with_execution_time(const vector<vector<bool>>& matrix, int origem, string nome_do_arquivo_de_saida = "arvoreDFS.txt");
+double BFS_tree_matrix_with_execution_time(const vector<vector<bool>>& matrix, int origem, string nome_do_arquivo_de_saida = "arvoreBFS.txt");
 
 #endif
