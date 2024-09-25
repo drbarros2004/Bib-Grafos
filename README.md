@@ -13,6 +13,8 @@ no começo do arquivo para que o compilador reconheça de onde estão vindo as f
 
 Para compilar, precisamos também explicitar o nome do arquivo ".cpp" que contém as funções da biblioteca.
 
+Todos os arquivos ".txt" de saída serão criados na mesma pasta em que se encontram os dois arquivos necessários para a utilização da biblioteca.
+
 ```
 g++ arquivo.cpp graph_lib.cpp -o
 ```
