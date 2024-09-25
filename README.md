@@ -73,8 +73,8 @@ Distance_matrix(grafo_teste, 1, 3);
 Por fim, modificamos um pouco as nossas funções de busca para retornarem o valor do tempo de execução do algoritmo. Essa parte está mais relacionada aos estudos de caso feitos no relatório.
 
 Ex.:
-
-1. `DFS_tree_vector_with_execution_time(grafo_teste, 1, "arvoreDFS_grafo_teste.txt")`
-2. `BFS_tree_matrix_with_execution_time(grafo_teste, 3, "arvoreBFS_grafo_teste.txt")`
-
+```
+`DFS_tree_vector_with_execution_time(grafo_teste, 1, "arvoreDFS_grafo_teste.txt")`;
+`BFS_tree_matrix_with_execution_time(grafo_teste, 3, "arvoreBFS_grafo_teste.txt")`;
+```
 
