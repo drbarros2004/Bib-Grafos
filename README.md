@@ -16,7 +16,7 @@ Para compilar, precisamos também explicitar o nome do arquivo ".cpp" que conté
 Todos os arquivos ".txt" de saída serão criados na mesma pasta em que se encontram os dois arquivos necessários para a utilização da biblioteca.
 
 ```
-g++ arquivo.cpp graph_lib.cpp -o
+g++ arquivo.cpp graph_lib.cpp
 ```
 
 # Funções para receber entradas
