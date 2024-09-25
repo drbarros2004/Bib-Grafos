@@ -299,7 +299,7 @@ double DFS_tree_vector_with_execution_time(const vector<vector<int>>& graph, int
 
 int Approximate_diameter_vector(const vector<vector<int>>& graph){
     int max_distancia = 0;
-    for(int i = 0; i < 9; i ++){
+    for(int i = 0; i < 5000; i ++){
         vector<int> dist(graph.size(), -1);
         int origem = rand() % graph.size();
         dist[origem] = 0;
@@ -683,7 +683,7 @@ double DFS_tree_matrix_with_execution_time(const vector<vector<bool>>& matrix, i
 
 int Approximate_diameter_matrix(const vector<vector<bool>>& matrix){
     int max_distancia = 0;
-    for(int i = 0; i < 9; i ++){
+    for(int i = 0; i < 5000; i ++){
         vector<int> dist(matrix.size(), -1);
         int origem = rand() % matrix.size();
         dist[origem] = 0;
