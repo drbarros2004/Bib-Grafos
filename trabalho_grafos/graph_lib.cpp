@@ -325,7 +325,7 @@ int Approximate_diameter_vector(const vector<vector<int>>& graph){
 
 int Diameter_vector(const vector<vector<int>>& graph){
 
-    if(graph.size() >= 50000){
+    if(graph.size() >= 500000){
         return Approximate_diameter_vector(graph);
     }
     else{
@@ -709,7 +709,7 @@ int Approximate_diameter_matrix(const vector<vector<bool>>& matrix){
 
 int Diameter_matrix(const vector<vector<bool>>& matrix){
 
-    if(matrix.size() >= 50000){
+    if(matrix.size() >= 500000){
         return Approximate_diameter_matrix(matrix);
     }
     else{
