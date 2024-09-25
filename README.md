@@ -32,6 +32,7 @@ Ex.:
 
 ```
 vector<vector<int>> grafo_teste = txt_to_adjacency_vector(nome_arquivo);
+vector<vector<bool>> grafo_teste2 = txt_to_adjacency_matrix(nome_arquivo);
 ```
 
 # Funções que geram árvores (BFS e DFS):
@@ -54,7 +55,7 @@ DFS_tree_vector(grafo_teste, 1, "arvoreDFS_grafo_teste.txt");
 Ou, usando uma BFS para matriz de adjacência:
 
 ```
-BFS_tree_vector(grafo_teste, 3, "arvoreBFS_grafo_teste.txt");
+BFS_tree_matrix(grafo_teste2, 3, "arvoreBFS_grafo_teste.txt");
 ```
 
 # Distância e Diâmetro:
@@ -67,7 +68,7 @@ Ex.:
 
 ```
 Diameter_vector(grafo_teste);
-Distance_matrix(grafo_teste, 1, 3);
+Distance_matrix(grafo_teste2, 1, 3);
 ```
 
 # Funções para cálculo de tempo de execução:
@@ -77,6 +78,6 @@ Por fim, modificamos um pouco as nossas funções de busca para retornarem o val
 Ex.:
 ```
 `DFS_tree_vector_with_execution_time(grafo_teste, 1, "arvoreDFS_grafo_teste.txt")`;
-`BFS_tree_matrix_with_execution_time(grafo_teste, 3, "arvoreBFS_grafo_teste.txt")`;
+`BFS_tree_matrix_with_execution_time(grafo_teste2, 3, "arvoreBFS_grafo_teste.txt")`;
 ```
 
